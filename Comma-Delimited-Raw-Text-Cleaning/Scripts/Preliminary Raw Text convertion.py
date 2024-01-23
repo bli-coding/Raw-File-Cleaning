@@ -62,7 +62,7 @@ def process_lines(raw_data):
 
     for line in lines:
         # Recognizing the Column line
-        if line.startswith("PedigreeName"):
+        if line.startswith("keyword"):
             processed_lines.append(line)
         else:
             # Find the position of the first digit + a comma
