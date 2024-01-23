@@ -40,12 +40,12 @@ def extract_counts_and_values_between_commas(
 
     # Iterate through the lines
     for line in lines[1:]:
-        # Find the position of the first "http:"
+        # Find the position of the first "keyword"
         cap_line = line.upper()
         key_position = cap_line.rfind(key_pattern)
 
         if key_position != -1:
-            # Count the commas before the first "http:"
+            # Count the commas before the first "keyword"
             comma_count = line[: key_position + 1].count(",")
             if comma_count != correct_comma_count:
                 Line_need_clean.append(
@@ -74,8 +74,8 @@ def main():
         raw_content = file.read()
 
     # Define the column to filter
-    col_name = "VAS Percentage Density"  # <- needs to define
-    key_pattern = ",N,"  # <- needs to define
+    col_name = "keyword column"  # <- needs to define
+    key_pattern = "keyword"  # <- needs to define
 
     correct_count = correct_comma_number(raw_content, col_name)
     print(correct_count)
